@@ -3,6 +3,6 @@
 using namespace std;
 int main()
 {
-	schedule("funday");
+	schedule(20);
 	return 0;
 } 

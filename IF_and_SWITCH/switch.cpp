@@ -5,55 +5,36 @@
 
 using namespace std;
 
-void static schedule(string day) {
-	string curday = day;
-	int daynum = 0;
+void static schedule(int day) {
 
-	//Iterates through each letter converting it into uppercase.
-	for (int i = 0; i < curday.length(); i++)
-	{
-		curday[i] = toupper(curday[i]);
-	}
+	enum daysofweek {MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY };
 
-	cout << "today is " << curday << "." << endl;
+	daysofweek curday;
 
-	if (curday == "MONDAY" || curday == "TUESDAY" || curday == "WEDNESDAY" || curday == "THURSDAY" || curday == "FRIDAY")
-	{
-		daynum = 1;
-	}
-	else if (curday == "SATURDAY" || curday == "SUNDAY")
-	{
-		daynum = 6;
-	}
-	else
-	{
-		cout << "Whatever \"" << curday << "\" is, is not a weekday.\n TERMINATING PROGRAM.\n";
-		daynum = 0;
-	
-	}
+	curday = daysofweek(day);
 
-	switch (daynum)
+	switch (curday)
 	{
+	case 0:
+		cout << "Monday is a workday.\n";
+		break;
 	case 1:
-		cout << curday << " is a workday.\n";
+		cout << "Tuesday is a workday.\n";
 		break;
 	case 2:
-		cout << curday << " is a workday.\n";
+		cout << "Wednesday is a workday.\n";
 		break;
 	case 3:
-		cout << curday << " is a workday.\n";
+		cout << "Thusday is a workday.\n";
 		break;
 	case 4:
-		cout << curday << " is a workday.\n";
+		cout << "Friday is a workday.\n";
 		break;
 	case 5:
-		cout << curday << " is a workday.\n";
+		cout << "Saturday is not a workday.\n";
 		break;
 	case 6:
-		cout << curday << " is weekend.\n";
-		break;
-	case 7:
-		cout << curday << " is weekend.\n";
+		cout << "Sunday is not a workday.\n";
 		break;
 	default:
 		cout << "NOT A VALID DAY PICKED.\n";
